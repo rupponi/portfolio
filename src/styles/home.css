@@ -1,0 +1,96 @@
+html,body {
+    background: #0C1424;
+    text-align: center;
+}
+  
+#view-container {
+    height: 100vh;
+    width: 100%;
+}
+
+#introduction-component {
+    height: 100%;
+    width: 100%;
+}
+
+#intro-message {
+    color: #fff;
+    position: absolute;
+
+    width: 100%;
+
+    font-family: "Open Sans", "sans-serif";
+    font-weight: 100;
+    font-size: 1.5em;
+
+    top: 40%;
+}
+
+#ref-link-container {
+    position: absolute;
+
+    height: 8rem;
+    width: 100%;
+
+    bottom: 0;
+}
+
+.ref-cont {
+    display: inline-block;
+    font-size: 2rem;
+
+    height: 5rem;
+    width: 5rem;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.ref-cont:hover {
+    box-shadow: 0 0 3px #00DAFF;
+    background: #131F35;
+}
+.ref-cont:active {
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.ref {
+    margin-top: 1.5rem;
+    color: white;
+}
+.ref:active {
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+
+
+
+
+/********************* MEDIA QUERIES FOR MOBILE SCALING *************************/
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+    #intro-message {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    #intro-message {
+        font-size: 1.2rem;
+    }
+}
