@@ -1,8 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import '../styles/experience.css';
+import { Helmet } from 'react-helmet';
 
-import NavBar from '../components/navbar/navbar';
 import ExperienceCard from '../components/experience-card/experience-card';
 import Datastore from '../data.json';
 
@@ -23,22 +22,15 @@ class Experience extends React.Component {
             <meta name = "viewport" content = "width=device-width, initial-scale = 1"/>
           </Helmet>
 
-          <div id = "navbar">
-            <NavBar/>
-          </div>
-            <div id = "view-container">
-                <div id = "experience-component">
-                  <h1 id = "experience-section-title">{Datastore.experience.title}</h1>
-                  <div id = "experience-partition">
+          <div id = "view-container">
+              <div id = "experience-component">
+                <h1 id = "experience-section-title">{Datastore.experience.title}</h1>
+                <div id = "experience-partition">
 
-                      {experienceData}
-                      
-                      <div id = "signature">
-                          <a id = "signature-link" rel = "noopener noreferrer" target = "_blank" href = "https://github.com/rupponi"><h3>© 2021 Rohan Upponi</h3></a>
-                      </div>
-                  </div>
+                    {experienceData}
                 </div>
-            </div>
+              </div>
+          </div>
         </html>
       )
     }

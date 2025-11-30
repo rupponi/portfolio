@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import '../styles/about.css';
 
-import NavBar from '../components/navbar/navbar';
 import Datastore from '../data.json';
 
 class About extends React.Component {
@@ -22,9 +21,6 @@ class About extends React.Component {
           <meta name = "viewport" content = "width=device-width, initial-scale = 1"/>
         </Helmet>
 
-        <div id = "navbar">
-          <NavBar/>
-        </div>
         <div id = "view-container">
             <div id = "about-component">
                 <h1 id = "about-title">

@@ -28,20 +28,21 @@
 #name-title {
     color: #fff;
     font-family: "Open Sans", "sans-serif";
+    text-decoration: none;
 
-    font-size: 1.5rem;
+    font-size: 0.75rem;
     font-weight: 100;
-    margin-top: 1.25rem;
-    margin-left: 6rem;
 }
 
 #title-panel {
     float: left;
 
     height: 100%;
-    width: -moz-calc(100% - 6rem);
-    width: -webkit-calc(100% - 6rem);
-    width: calc(100% - 6rem);
+    width: -moz-calc(100% - 12rem);
+    width: -webkit-calc(100% - 12rem);
+    width: calc(100% - 12rem);
+
+    padding-left: 6rem;
 }
 
 #menu-panel {
@@ -130,34 +131,39 @@
     padding-bottom: 0.5rem;
 }
 
+.no-link {
+    color: #fff;
+    text-decoration: none;
+}
+
 
 
 @-webkit-keyframes titleClick {
     0% {
         color: #FFF;
-        font-size: 1.5rem;
+        font-size: 0.75rem;
     }
     50% {
         color: #00DAFF;
-        font-size: 1rem;
+        font-size: 0.6rem;
     }
     100% {
         color: #FFF;
-        font-size: 1.5rem;
+        font-size: 0.75rem;
     }
 }
 @keyframes titleClick {
     0% {
         color: #FFF;
-        font-size: 1.5rem;
+        font-size: 0.75rem;
     }
     50% {
         color: #00DAFF;
-        font-size: 1rem;
+        font-size: 0.6rem;
     }
     100% {
         color: #FFF;
-        font-size: 1.5rem;
+        font-size: 0.75rem;
     }
 }
 .animate-title-click {

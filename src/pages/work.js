@@ -1,8 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import '../styles/work.css';
+import { Helmet } from 'react-helmet';
 
-import NavBar from '../components/navbar/navbar';
 import WorkCard from '../components/work-card/work-card';
 import Datastore from '../data.json';
 
@@ -25,9 +24,6 @@ class Work extends React.Component {
             <meta name = "viewport" content = "width=device-width, initial-scale = 1"/>
           </Helmet>
 
-          <div id = "navbar">
-            <NavBar/>
-          </div>
           <div id = "view-container">
             <h1 id = "work-section-title">{Datastore.work.title}</h1>
             <div id = "work-partition">

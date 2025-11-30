@@ -1,6 +1,6 @@
 import React from "react";
-import { navigate } from "gatsby";
 import "./navbar.css";
+import { Link } from 'react-router-dom';
 
 var menuSelected = false;
 
@@ -70,120 +70,105 @@ function menuSelect() {
     menuSelected = !menuSelected;
 }
 
-class NavBar extends React.Component {
+function navBarClick() {
+    let title = document.getElementById("name-title"),
+    container = document.getElementById("navbar-container");
 
-    constructor(props) {
-        super(props);
+    title.classList.add("animate-title-click");
+    container.classList.add("light-navbar");
 
-        this.navBarClick = this.navBarClick.bind(this);
-        this.selectAbout = this.selectAbout.bind(this);
-        this.selectExperience = this.selectExperience.bind(this);
-        this.selectResume = this.selectResume.bind(this);
-    }
+    title.addEventListener('animationend', () => {
+        title.classList.remove("animate-title-click");
+        container.classList.remove("light-navbar");
+    });
 
-    navBarClick() {
-        let title = document.getElementById("name-title"),
-        container = document.getElementById("navbar-container");
-    
-        title.classList.add("animate-title-click");
-        container.classList.add("light-navbar");
-    
-        title.addEventListener('animationend', () => {
-            title.classList.remove("animate-title-click");
-            container.classList.remove("light-navbar");
-        });
-    
-        if (menuSelected) {
-            menuSelect();
-        }
-        setTimeout(() => { navigate('/'); }, 250);
-    }
-
-    selectAbout() {
-        let aboutLink = document.getElementById("about-link");
-    
-        aboutLink.classList.add("animate-menu-item-click");
-        aboutLink.addEventListener('animationend', () => {
-            aboutLink.classList.remove("animate-menu-item-click");
-        });
-    
-        if (menuSelected) {
-            menuSelect();
-        }
-        setTimeout(() => { navigate('/about'); }, 250);
-    }
-
-    selectExperience() {
-        let experienceLink = document.getElementById("experience-link");
-    
-        experienceLink.classList.add("animate-menu-item-click");
-        experienceLink.addEventListener('animationend', () => {
-            experienceLink.classList.remove("animate-menu-item-click");
-        });
-    
-        if (menuSelected) {
-            menuSelect();
-        }
-        setTimeout(() => { navigate('/experience'); }, 250);
-    }
-
-    selectWork() {
-        let experienceLink = document.getElementById("experience-link");
-    
-        experienceLink.classList.add("animate-menu-item-click");
-        experienceLink.addEventListener('animationend', () => {
-            experienceLink.classList.remove("animate-menu-item-click");
-        });
-    
-        if (menuSelected) {
-            menuSelect();
-        }
-        setTimeout(() => { navigate('/work'); }, 250);
-    }
-
-    selectResume() {
-        let resumeLink = document.getElementById("resume-link");
-    
-        resumeLink.classList.add("animate-menu-item-click");
-        resumeLink.addEventListener('animationend', () => {
-            resumeLink.classList.remove("animate-menu-item-click");
-        });
-    
-        if (menuSelected) {
-            menuSelect();
-        }
-        window.open("res/resume.pdf");
-    }
-
-    render() {
-        return (
-            <div id = "navbar-component">
-                <div id = "navbar-container">
-                    <div id = "title-panel" onClick = {this.navBarClick} onKeyPress = {this.navBarClick} tabIndex="0" role="button">
-                        <h1 id = "name-title" className = "unselectable">ROHAN UPPONI</h1>
-                    </div>
-                    <div id = "menu-panel" onClick = {menuSelect} onKeyPress = {menuSelect} tabIndex="0" role="button">
-                        <h1 id = "menu-symbol" className = "unselectable">{'\u2630'}</h1>
-                    </div>
-                </div>
-                <div id = "menu-container"></div>
-                <ul id = "menu-list">
-                    <li id = "about-link" className = "list-link unselectable">
-                        <span className = "list-link-span" onClick = {this.selectAbout} onKeyPress = {this.selectAbout} tabIndex="0" role="button">ABOUT</span>
-                    </li>
-                    <li id = "experience-link" className = "list-link unselectable">
-                        <span className = "list-link-span" onClick = {this.selectExperience} onKeyPress = {this.selectExperience} tabIndex="0" role="button">EXPERIENCE</span>
-                    </li>
-                    <li id = "work-link" className = "list-link unselectable">
-                        <span className = "list-link-span" onClick = {this.selectWork} onKeyPress = {this.selectWork} tabIndex="0" role="button">WORK</span>
-                    </li>
-                    <li id = "resume-link" className = "list-link unselectable">
-                        <span className = "list-link-span" onClick = {this.selectResume} onKeyPress = {this.selectResume} tabIndex="0" role="button">RESUME</span>
-                    </li>
-                </ul>
-            </div>
-        );
+    if (menuSelected) {
+        menuSelect();
     }
 }
+
+function selectAbout() {
+    let aboutLink = document.getElementById("about-link");
+
+    aboutLink.classList.add("animate-menu-item-click");
+    aboutLink.addEventListener('animationend', () => {
+        aboutLink.classList.remove("animate-menu-item-click");
+    });
+
+    if (menuSelected) {
+        menuSelect();
+    }
+}
+
+function selectExperience() {
+    let experienceLink = document.getElementById("experience-link");
+
+    experienceLink.classList.add("animate-menu-item-click");
+    experienceLink.addEventListener('animationend', () => {
+        experienceLink.classList.remove("animate-menu-item-click");
+    });
+
+    if (menuSelected) {
+        menuSelect();
+    }
+}
+
+function selectWork() {
+    let experienceLink = document.getElementById("experience-link");
+
+    experienceLink.classList.add("animate-menu-item-click");
+    experienceLink.addEventListener('animationend', () => {
+        experienceLink.classList.remove("animate-menu-item-click");
+    });
+
+    if (menuSelected) {
+        menuSelect();
+    }
+}
+
+function selectResume() {
+    let resumeLink = document.getElementById("resume-link");
+
+    resumeLink.classList.add("animate-menu-item-click");
+    resumeLink.addEventListener('animationend', () => {
+        resumeLink.classList.remove("animate-menu-item-click");
+    });
+
+    if (menuSelected) {
+        menuSelect();
+    }
+    window.open("res/resume.pdf");
+}
+
+function NavBar() {
+    return (
+        <div id = "navbar-component">
+            <div id = "navbar-container">
+                <div id = "title-panel" onClick={navBarClick} onKeyPress = {navBarClick} tabIndex="0" role="button">
+                    <Link id="name-title" to="/"><h1>ROHAN UPPONI</h1></Link>
+                </div>
+                <div id = "menu-panel" onClick = {menuSelect} onKeyPress = {menuSelect} tabIndex="0" role="button">
+                    <h1 id = "menu-symbol" className = "unselectable">{'\u2630'}</h1>
+                </div>
+            </div>
+            <div id = "menu-container"></div>
+            <ul id = "menu-list">
+                <li id = "about-link" className = "list-link unselectable">
+                    <span className = "list-link-span" onClick = {selectAbout} onKeyPress = {selectAbout} tabIndex="0" role="button"><Link to="/about" className="no-link">ABOUT</Link></span>
+                </li>
+                <li id = "experience-link" className = "list-link unselectable">
+                    <span className = "list-link-span" onClick = {selectExperience} onKeyPress = {selectExperience} tabIndex="0" role="button"><Link to="/experience" className="no-link">EXPERIENCE</Link></span>
+                </li>
+                <li id = "work-link" className = "list-link unselectable">
+                    <span className = "list-link-span" onClick = {selectWork} onKeyPress = {selectWork} tabIndex="0" role="button"><Link to="/work" className="no-link">WORK</Link></span>
+                </li>
+                <li id = "resume-link" className = "list-link unselectable">
+                    <span className = "list-link-span" onClick = {selectResume} onKeyPress = {selectResume} tabIndex="0" role="button">RESUME</span>
+                </li>
+            </ul>
+        </div>
+    )
+}
+
 
 export default NavBar;
